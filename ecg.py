@@ -5,7 +5,7 @@ import google.generativeai as genai
 from PIL import Image
 
 # Load environment variables from .env file
-load_dotenv()
+
 
 # Set the Google API key
 GOOGLE_API_KEY = "AIzaSyDtmbph6NJPYz5u3yHwiZBnQCitWiW7jQU"
