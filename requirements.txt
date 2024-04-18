@@ -1,4 +1,3 @@
-dotenv
 streamlit
 google
 Pillow
