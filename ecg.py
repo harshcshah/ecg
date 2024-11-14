@@ -8,7 +8,7 @@ from PIL import Image
 
 
 # Set the Google API key
-GOOGLE_API_KEY = "AIzaSyDtmbph6NJPYz5u3yHwiZBnQCitWiW7jQU"
+GOOGLE_API_KEY = "AIzaSyBiWBz1Pe5ZZkGsiNkhzE7p0ALp9BJBxMk"
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # Function to load Google Gemini Pro Vision API and get response
@@ -32,7 +32,7 @@ st.header("Jio Health")
 
 # User inputs
 input_text = st.text_input("Input Prompt: ", key="input")
-uploaded_file = st.file_uploader("Choose an ECG graph image...", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader("Choose an foodimage...", type=["jpg", "jpeg", "png"])
 
 # Additional input field for doctor's questions
 doctor_question = st.text_input("Doctor's Question:")
@@ -40,21 +40,18 @@ doctor_question = st.text_input("Doctor's Question:")
 # Display uploaded image
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
-    st.image(image, caption="Uploaded ECG Graph Image.", use_column_width=True)
+    st.image(image, caption="UploadedImage.", use_column_width=True)
 
 # Button to trigger action
-submit_button = st.button("Analyze ECG Graph")
+submit_button = st.button("Analyze")
 
 # Input prompt for Gemini
 input_prompt = """
-You are an expert cardiologist tasked with analyzing the provided ECG graph and providing insights. Please interpret the ECG graph and provide details of any abnormalities detected, including the type of abnormality and its severity if applicable. Additionally, suggest any necessary follow-up actions or treatments based on your analysis in detail. Note: if you see any other image then say it is {name} of image.
-
-Please use the following format to report your findings:
-
-1. Abnormality 1 - Description of abnormality (if applicable), severity (mild/moderate/severe)
-2. Abnormality 2 - Description of abnormality (if applicable), severity (mild/moderate/severe)
-   ...
-
+You are an expert nutrionist telling to all the calories of food by photo 
+like ingerdient 1 - 
+        ''
+    ingredient n -
+Also tell at last food is healthy or not 
 """
 
 # If submit button is clicked
