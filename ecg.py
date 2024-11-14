@@ -27,8 +27,8 @@ def input_image_setup(uploaded_file):
         raise FileNotFoundError("No file uploaded")
 
 # Initialize Streamlit app
-st.set_page_config(page_title="ECG Analysis App")
-st.header("Jio Health")
+st.set_page_config(page_title="Nutrition Analysis App")
+st.header("Nutrify")
 
 # User inputs
 input_text = st.text_input("Input Prompt: ", key="input")
